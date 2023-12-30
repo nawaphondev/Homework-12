@@ -5,7 +5,6 @@ import ProductRow from './ProductRow';
 function ProductTable({ products, filterText, inStockOnly }) {
   let lastCategory = null;
 
-  // Filter and map products
   const rows = products
     .filter(product => {
       if (product.name.toLowerCase().indexOf(filterText.toLowerCase()) === -1) {
@@ -17,14 +16,12 @@ function ProductTable({ products, filterText, inStockOnly }) {
       return true;
     })
     .map(product => {
-      // Add ProductCategoryRow if category changes
       const categoryRow = product.category !== lastCategory ? (
         <ProductCategoryRow
           category={product.category}
           key={product.category} />
       ) : null;
 
-      // Update lastCategory
       lastCategory = product.category;
 
       return (
