@@ -2,11 +2,11 @@ import React from 'react';
 
 function ProductCategoryRow({ category }) {
     return (
-        <tr>
-          <th className='fruit-box' colSpan="2">
-            {category}
-          </th>
-        </tr>
+      <tr>
+      <th colSpan="2" className="category-row">
+        {category}
+      </th>
+    </tr>
       );
 }
 

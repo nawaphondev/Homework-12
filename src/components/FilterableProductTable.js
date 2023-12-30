@@ -7,17 +7,15 @@ function FilterableProductTable({ products }) {
     const [inStockOnly, setInStockOnly] = useState(false);
   
     return (
-      <div>
-        <SearchBar 
-          filterText={filterText} 
-          inStockOnly={inStockOnly} 
-          onFilterTextChange={setFilterText} 
-          onInStockOnlyChange={setInStockOnly} />
-        <ProductTable 
-          products={products} 
-          filterText={filterText}
-          inStockOnly={inStockOnly} />
-      </div>
+      <div className="filterable-product-table">
+      <SearchBar
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+        onFilterTextChange={setFilterText}
+        onInStockOnlyChange={setInStockOnly}
+      />
+      <ProductTable products={products} filterText={filterText} inStockOnly={inStockOnly} />
+    </div>
     );
 }
 
